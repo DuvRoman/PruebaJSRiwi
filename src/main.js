@@ -1,4 +1,7 @@
+import { initDashboardAdmin } from "./logicPage/initDashboardAdmin";
 import { initDashboardUser } from "./logicPage/initDashboardUser";
+import { initManageTasks } from "./logicPage/initManageTasks";
+import { initManageUsers } from "./logicPage/initManageUsers";
 import { initMyTasks } from "./logicPage/initMyTask";
 import { initProfile } from "./logicPage/initPerfil";
 import { createUser, getUserByEmail } from "./services/user";
@@ -10,8 +13,10 @@ const routes = {
   "/dashboardUser" : "./src/private/dashboardUser.html",
   "/mytask" : "./src/private/myTask.html",
   "/profile" : "./src/private/profile.html",
-  // "/dashboardAdmin" : "./src/private/dashboardAdmin.html",
-  // "/taskManage" : ""
+  "/dashboardAdmin" : "./src/private/dashboardAdmin.html",
+  "/manageTasks" : "./src/private/manageTasks.html",
+  "/manageUsers" : "./src/private/manageUsers.html"
+  
 }
 
 const publicRoutes = ["/login","/register"]
@@ -86,7 +91,10 @@ export async function navigate(route) {
     "/login": initLogin,
     "/dashboardUser": initDashboardUser,
     "/mytask" : initMyTasks,
-    "/profile" : initProfile
+    "/profile" : initProfile,
+    "/dashboardAdmin" : initDashboardAdmin,
+    "/manageTasks" : initManageTasks,
+    "/manageUsers" : initManageUsers
   };
 
   if (viewHandlers[path]) {

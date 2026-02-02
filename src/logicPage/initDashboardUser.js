@@ -8,15 +8,15 @@ export async function initDashboardUser() {
     
     const currentUser = JSON.parse(userRaw);
 
-    // 1. Activar los clics del Sidebar y Header
+    //Confirm the routes and add the sidebar and header.
     setupSidebarNavigation();
 
-    // 2. Pintar datos del usuario en el Header
+    // Display user data in the Header
     document.getElementById('user-name').textContent = currentUser.name;
     const avatar = document.getElementById('header-avatar');
     if (currentUser.avatar) avatar.src = currentUser.avatar;
 
-    // 3. Obtener y calcular estadísticas
+    //  Obtain and calculate statistics
     try {
         const tasks = await getTasksByUser(currentUser.id);
         
@@ -24,12 +24,12 @@ export async function initDashboardUser() {
         const pending = tasks.filter(t => t.status === 'pending').length;
         const completed = tasks.filter(t => t.status === 'completed').length;
 
-        // 4. Inyectar en los contadores del Dashboard
+        // Inject into the Dashboard counters
         document.getElementById('stat-total').textContent = total;
         document.getElementById('stat-pending').textContent = pending;
         document.getElementById('stat-completed').textContent = completed;
 
-        // Cambiar el título de la página en el header
+        // Change the page title in the header
         document.getElementById('current-page-title').textContent = "Dashboard Overview";
 
     } catch (error) {

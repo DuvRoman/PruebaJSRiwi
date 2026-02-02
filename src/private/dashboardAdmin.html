@@ -1,0 +1,88 @@
+<div class="app-layout">
+    <aside class="sidebar admin-sidebar">
+        <div class="sidebar-logo">
+            <h2>AdminPanel</h2>
+            <span>EstudiaPues</span>
+        </div>
+        <nav class="sidebar-nav">
+            <button class="nav-item active" data-path="/dashboardAdmin">
+                <i class="fas fa-chart-line"></i> Dashboard
+            </button>
+            <button class="nav-item" data-path="/manageTasks">
+                <i class="fas fa-tasks"></i> Manage task
+            </button>
+            <button class="nav-item" data-path="/manageUsers">
+                <i class="fas fa-users-cog"></i> Manage Users
+            </button>
+        </nav>
+        <div class="sidebar-footer">
+
+        </div>
+    </aside>
+
+    <main class="main-container">
+        <header class="app-header">
+            <div class="header-left">
+                <div class="header-box page-info">
+                    <span id="current-page-title">General Statistics</span>
+                </div>
+            </div>
+            <div class="header-right">
+                <div class="admin-badge">Administrator</div>
+                <div class="user-info">
+                    <span id="admin-name">Admin Name</span>
+                </div>
+                <button id="btn-logout" class="logout-link">Logout</button>
+            </div>
+        </header>
+
+        <section class="content-body">
+            <div class="stats-grid">
+                <div class="stat-card total">
+                    <div class="stat-icon"><i class="fas fa-clipboard-list"></i></div>
+                    <div class="stat-data">
+                        <h3 id="stat-total-tasks">0</h3>
+                        <p>Total Tasks</p>
+                    </div>
+                </div>
+
+                <div class="stat-card pending">
+                    <div class="stat-icon"><i class="fas fa-clock"></i></div>
+                    <div class="stat-data">
+                        <h3 id="stat-pending-tasks">0</h3>
+                        <p>Pending</p>
+                    </div>
+                </div>
+
+                <div class="stat-card completed">
+                    <div class="stat-icon"><i class="fas fa-check-circle"></i></div>
+                    <div class="stat-data">
+                        <h3 id="stat-completed-tasks">0</h3>
+                        <p>Completed</p>
+                    </div>
+                </div>
+
+                <div class="stat-card system">
+                    <div class="stat-icon"><i class="fas fa-users"></i></div>
+                    <div class="stat-data">
+                        <h3 id="stat-active-users">0</h3>
+                        <p>Active Users</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="admin-dashboard-footer">
+                <div class="info-panel">
+                    <h3>System Overview</h3>
+                    <div class="metric-row">
+                        <span>Completion Rate:</span>
+                        <div class="progress-bar">
+                            <div id="completion-bar" style="width: 0%"></div>
+                        </div>
+                        <span id="completion-percent">0%</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+</div>

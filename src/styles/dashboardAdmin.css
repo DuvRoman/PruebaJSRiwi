@@ -1,0 +1,130 @@
+.table-container {
+    background: white;
+    border-radius: 15px;
+    padding: 1.5rem;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    margin-top: 1rem;
+}
+
+.table-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1.5rem;
+    padding-bottom: 1rem;
+    border-bottom: 1px solid #f0f0f0;
+}
+
+.table-header h3 {
+    color: #1a202c;
+    font-size: 1.3rem;
+}
+
+/* --- Filtros y Buscador --- */
+#admin-task-search {
+    padding: 10px 15px;
+    border: 1px solid #e2e8f0;
+    border-radius: 8px;
+    width: 250px;
+    outline: none;
+    transition: border-color 0.2s;
+}
+
+#admin-task-search:focus {
+    border-color: #3182ce;
+}
+
+/* --- Estilo de Tabla --- */
+.custom-table {
+    width: 100%;
+    border-collapse: collapse;
+    text-align: left;
+}
+
+.custom-table th {
+    background: #f7fafc;
+    padding: 12px 15px;
+    color: #4a5568;
+    font-weight: 600;
+    text-transform: uppercase;
+    font-size: 0.75rem;
+    letter-spacing: 0.05em;
+}
+
+.custom-table td {
+    padding: 15px;
+    border-bottom: 1px solid #edf2f7;
+    color: #2d3748;
+    vertical-align: middle;
+}
+
+/* --- Badges y Pills (Pastillas de color) --- */
+.user-pill {
+    background: #ebf8ff;
+    color: #2b6cb0;
+    padding: 5px 12px;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: 600;
+}
+
+.role-badge {
+    padding: 4px 10px;
+    border-radius: 6px;
+    font-size: 0.7rem;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+.role-badge.admin { background: #fee2e2; color: #b91c1c; }
+.role-badge.user { background: #dcfce7; color: #15803d; }
+
+/* --- Botones de Acción --- */
+.actions-cell {
+    display: flex;
+    gap: 10px;
+}
+
+.btn-delete {
+    background: #fff5f5;
+    color: #e53e3e;
+    border: none;
+    padding: 8px;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+.btn-delete:hover {
+    background: #feb2b2;
+}
+
+.btn-sm {
+    padding: 6px 12px;
+    font-size: 0.8rem;
+    border-radius: 6px;
+    border: none;
+    cursor: pointer;
+    background: #3182ce;
+    color: white;
+    transition: background 0.2s;
+}
+
+.btn-sm:hover {
+    background: #2b6cb0;
+}
+
+/* --- Status Interactivo --- */
+.status-badge {
+    border: none;
+    cursor: pointer;
+    padding: 5px 12px;
+    border-radius: 15px;
+    font-size: 0.75rem;
+    font-weight: bold;
+    transition: transform 0.1s;
+}
+
+.status-badge:active { transform: scale(0.95); }
+.status-badge.pending { background: #fffaf0; color: #dd6b20; border: 1px solid #fbd38d; }
+.status-badge.completed { background: #f0fff4; color: #38a169; border: 1px solid #9ae6b4; }

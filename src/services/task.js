@@ -1,5 +1,17 @@
 
 
+export const getTasks = async ()=>{
+    try {
+        const data = await fetch(`http://localhost:3001/task`)
+        const response = await data.json();
+        return response
+    } catch (error) {
+        console.log("Tipo de error: " , error)
+        
+    }
+}
+
+
 export const getTasksByUser = async (userId)=>{
     try {
         const data = await fetch(`http://localhost:3001/task?userId=${userId}`)

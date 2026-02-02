@@ -1,0 +1,65 @@
+
+<div class="app-layout">
+    <aside class="sidebar admin-sidebar">
+        <div class="sidebar-logo">
+            <h2>AdminPanel</h2>
+            <span>EstudiaPues</span>
+        </div>
+        <nav class="sidebar-nav">
+            <button class="nav-item " data-path="/dashboardAdmin">
+                <i class="fas fa-chart-line"></i> Dashboard
+            </button>
+            <button class="nav-item" data-path="/manageTasks">
+                <i class="fas fa-tasks"></i> Manage task
+            </button>
+            <button class="nav-item active" data-path="/manageUsers">
+                <i class="fas fa-users-cog"></i> Manage Users
+            </button>
+        </nav>
+        <div class="sidebar-footer">
+
+        </div>
+    </aside>
+
+    <main class="main-container">
+        <header class="app-header">
+            <div class="header-left">
+                <div class="header-box page-info">
+                    <span id="current-page-title">General Statistics</span>
+                </div>
+            </div>
+            <div class="header-right">
+                <div class="admin-badge">Administrator</div>
+                <div class="user-info">
+                    <span id="admin-name">Admin Name</span>
+                </div>
+                <button id="btn-logout" class="logout-link">Logout</button>
+            </div>
+        </header>
+
+       <section class="content-body">
+            <div class="table-container">
+            <div class="table-header">
+                <h3>Registered Users</h3>
+            </div>
+            <table class="custom-table">
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Email</th>
+                    <th>Current Role</th>
+                    <th>Group / Degree</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody id="admin-users-table-body"></tbody>
+        </table>
+        </div>
+    </section>
+    </main>
+</div>
+
+
+
+
+
