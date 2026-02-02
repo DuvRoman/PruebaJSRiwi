@@ -5,17 +5,19 @@ import { getUser } from "../services/user";
 
 
 export async function initManageTasks() {
+    //Confirm the routes and add the sidebar and header.
     const currentAdmin = setupSidebarNavigation();
     if (!currentAdmin) return;
 
     let allTasks = [];
     let allUsers = [];
-
+    //Create promise
     const refreshGlobalTasks = async () => {
         [allTasks, allUsers] = await Promise.all([getTasks(), getUser()]);
         renderAdminTable(allTasks);
     };
 
+    //Render table
     function renderAdminTable(tasks) {
         const tbody = document.getElementById('admin-tasks-table-body');
         tbody.innerHTML = tasks.map(task => {
@@ -35,7 +37,7 @@ export async function initManageTasks() {
         }).join('');
     }
 
-
+    //Click target
     document.addEventListener('click', async (e) => {
         const id = e.target.dataset.id;
         

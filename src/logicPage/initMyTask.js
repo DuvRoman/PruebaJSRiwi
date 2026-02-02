@@ -3,12 +3,11 @@ import { createTask, deleteTask, getTasksByUser, updateTask } from "../services/
 
 
 export async function initMyTasks() {
-    // 🛡️ 1. Seguridad y Componentes Compartidos
-    // Asumimos que setupSidebarNavigation retorna el usuario de la sesión
+    //Routes confirm for logic 
     const currentUser = setupSidebarNavigation();
     if (!currentUser) return;
 
-    // Variables de Elementos del DOM
+    // DOM Elements
     const modal = document.getElementById('task-modal');
     const taskForm = document.getElementById('task-form');
     const modalTitle = document.getElementById('modal-title');
@@ -18,7 +17,7 @@ export async function initMyTasks() {
     let editingTaskId = null;
     let allTasks = [];
 
-    // --- FUNCIONES DE APOYO ---
+    // Functions Help
 
     const closeModal = () => {
         modal.classList.remove('active');
@@ -38,8 +37,7 @@ export async function initMyTasks() {
         document.getElementById('table-high-count').textContent = highPriority;
     }
 
-    // --- DELEGACIÓN DE EVENTOS (Soluciona botones que no funcionan) ---
-    // Usamos el document para escuchar clics en elementos dinámicos
+    //Clicks target
     document.addEventListener('click', async (e) => {
         
         // 1. Abrir modal para NUEVA tarea
@@ -50,12 +48,12 @@ export async function initMyTasks() {
             modal.classList.add('active');
         }
 
-        // 2. Cerrar modal (Botón X o Cancelar)
+        // button close modal
         if (e.target.closest('#close-modal') || e.target.closest('#btn-cancel')) {
             closeModal();
         }
 
-        // 3. Botón ELIMINAR
+        // button delete
         if (e.target.closest('.btn-delete')) {
             const id = e.target.closest('.btn-delete').dataset.id;
             if (confirm("Are you sure you want to delete this task?")) {
@@ -64,7 +62,7 @@ export async function initMyTasks() {
             }
         }
 
-        // 4. Botón EDITAR
+        // button Update
        if (e.target.closest('.btn-edit')) {
             const id = e.target.closest('.btn-edit').dataset.id;
             const task = allTasks.find(t => t.id == id);
@@ -74,15 +72,14 @@ export async function initMyTasks() {
                 document.getElementById('task-name').value = task.title;
                 document.getElementById('task-priority-modal').value = task.priority;
                 document.getElementById('task-date-modal').value = task.dueDate;
-        
-        document.getElementById('task-status-modal').value = task.status; 
+                document.getElementById('task-status-modal').value = task.status; 
         
         modal.classList.add('active');
     }
 }
     });
 
-    // Cerrar al hacer clic fuera del modal
+    //toggle modal
     window.onclick = (e) => { if (e.target === modal) closeModal(); };
 
     // --- BUSCADOR Y FILTROS ---
@@ -101,7 +98,7 @@ export async function initMyTasks() {
     if (searchInput) searchInput.oninput = handleFilter;
     if (priorityFilter) priorityFilter.onchange = handleFilter;
 
-    // --- MANEJO DEL FORMULARIO ---
+    //Form logic
     taskForm.onsubmit = async (e) => {
         e.preventDefault();
         
@@ -123,12 +120,12 @@ export async function initMyTasks() {
         await refreshData();
     };
 
-    // --- CARGA INICIAL ---
+    // initial load
     document.getElementById('current-page-title').textContent = "My Assignments";
     await refreshData();
 }
 
-// Función de renderizado movida fuera o mantenida interna
+// Table render
 function renderTable(tasks, userName) {
     const tbody = document.getElementById('tasks-table-body');
     if (!tbody) return;

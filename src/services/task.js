@@ -66,7 +66,7 @@ export const deleteTask = async (id) => {
         const res = await fetch(`http://localhost:3001/task/${id}`, {
         method: 'DELETE'
     });
-    return await res.json();
+    return true;
          
     } catch (error) {
         console.log("Tipo de error :", error)

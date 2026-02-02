@@ -4,6 +4,7 @@ import { getUser, updateUserById } from "../services/user";
 
 
 export async function initManageUsers() {
+    //Routes confirm for logic 
     const currentAdmin = setupSidebarNavigation();
     if (!currentAdmin) return;
 
@@ -12,6 +13,7 @@ export async function initManageUsers() {
         renderUsersTable(users);
     };
 
+    //Render table
     function renderUsersTable(users) {
         const tbody = document.getElementById('admin-users-table-body');
         tbody.innerHTML = users.map(user => `
@@ -29,6 +31,7 @@ export async function initManageUsers() {
         `).join('');
     }
 
+    //Click target
     document.addEventListener('click', async (e) => {
         if (e.target.classList.contains('btn-change-role')) {
             const id = e.target.dataset.id;

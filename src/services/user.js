@@ -52,7 +52,7 @@ export const getUserByEmail = async (email) => {
         return response.length > 0 ? response[0] : null;
 
     } catch (error) {
-        // Este catch ahora atrapa errores de red Y nuestros "throws"
+     
         console.error("Tipo de Error: ", error.message);
         return null; 
     }
@@ -80,5 +80,5 @@ export const deleteUserById = async (userId) => {
     const res = await fetch(`http://localhost:3001/users/${userId}`, {
         method: 'DELETE'
     });
-    return await res.json();
+    return true;
 };

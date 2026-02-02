@@ -74,7 +74,7 @@ body {
 }
 
 .btn-primary:hover {
-  background-color: var(--primary-hover); /* Azul oscuro en lugar de rojo */
+  background-color: var(--primary-hover); 
   transform: translateY(-1px);
 }
 
@@ -93,7 +93,7 @@ body {
   background: none;
   border: none;
   color: var(--primary-color);
-  text-decoration: none; /* Quitamos el subrayado constante */
+  text-decoration: none; 
   font-weight: 600;
   cursor: pointer;
   padding: 0;
