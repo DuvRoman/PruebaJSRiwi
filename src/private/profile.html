@@ -1,0 +1,75 @@
+<div class="app-layout">
+    <aside class="sidebar">
+        <div class="sidebar-logo">
+            <h2>EstudiaPues</h2>
+        </div>
+        <nav class="sidebar-nav">
+            <button class="nav-item" data-path="/dashboardUser">
+                <i class="fas fa-th-large"></i> Dashboard
+            </button>
+            <button class="nav-item" data-path="/mytask">
+                <i class="fas fa-tasks"></i> My Tasks
+            </button>
+            <button class="nav-item active" data-path="/profile">
+                <i class="fas fa-user"></i> Profile
+            </button>
+        </nav>
+    </aside>
+
+    <main class="main-container">
+        <header class="app-header">
+            <div class="header-left">
+                <div class="header-box home-box" id="go-menu">
+                    <i class="fas fa-home"></i>
+                </div>
+                <div class="header-box page-info">
+                    <span id="current-page-title">My Profile</span>
+                </div>
+            </div>
+
+            <div class="header-right">
+                <div class="user-info">
+                    <span id="user-name">Estudiante</span>
+                    <img src="https://us.123rf.com/450wm/barks/barks2101/barks210100083/162354591-ilustraci%C3%B3n-de-icono-de-avatar-de-trabajador-circular-cuerpo-superior-persona-de-negocios.jpg?ver" alt="Profile" class="user-avatar" id="header-avatar">
+                </div>
+                <button id="btn-logout" class="logout-link">Logout</button>
+            </div>
+        </header>
+
+        <section class="content-body profile-section">
+            <div class="profile-card">
+                <div class="profile-header">
+                    <div class="avatar-edit-wrapper">
+                        <img id="profile-img-big" src="https://ui-avatars.com/api/?name=User" alt="User">
+                        <label for="avatar-url" class="edit-badge"><i class="fas fa-camera"></i></label>
+                    </div>
+                    <h2 id="display-full-name">Nombre del Usuario</h2>
+                    <p id="display-email">correo@ejemplo.com</p>
+                </div>
+
+                <form id="profile-form" class="profile-grid">
+                    <div class="form-group">
+                        <label>Full Name</label>
+                        <input type="text" id="prof-name" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Address</label>
+                        <input type="text" id="prof-address" placeholder="Calle 123 #45-67">
+                    </div>
+                    <div class="form-group">
+                        <label>Degree / Grade</label>
+                        <input type="text" id="prof-degree" placeholder="Sistemas / 11°A">
+                    </div>
+                    <div class="form-group">
+                        <label>Group</label>
+                        <input type="text" id="prof-group" placeholder="Group A / Morning Shift">
+                    </div>
+                    
+                    <div class="profile-actions">
+                        <button type="submit" class="btn-primary">Update Profile</button>
+                    </div>
+                </form>
+            </div>
+        </section>
+    </main>
+</div>

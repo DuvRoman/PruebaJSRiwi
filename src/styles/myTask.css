@@ -1,0 +1,195 @@
+/* Layout en Columna */
+.content-body {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+}
+
+/* Fila 1: Estadísticas Rápidas */
+.table-stats-row {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+    background: var(--white);
+    padding: 15px 25px;
+    border-radius: 12px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.02);
+}
+
+.mini-stat {
+    display: flex;
+    flex-direction: column;
+}
+
+.mini-stat .label { font-size: 0.8rem; color: #718096; font-weight: 600; }
+.mini-stat .value { font-size: 1.4rem; font-weight: 700; color: var(--primary-color); }
+.mini-stat .value.high { color: #e74c3c; }
+
+.btn-add-task {
+    margin-left: auto;
+    background: var(--primary-color);
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 8px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+/* Fila 2: Buscador */
+.search-bar-row {
+    display: flex;
+    gap: 15px;
+}
+
+.search-input-wrapper {
+    flex: 1;
+    position: relative;
+}
+
+.search-input-wrapper i {
+    position: absolute;
+    left: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #a0aec0;
+}
+
+.search-input-wrapper input {
+    width: 100%;
+    padding: 12px 12px 12px 40px;
+    border-radius: 10px;
+    border: 1px solid #e2e8f0;
+    outline: none;
+    transition: 0.3s;
+}
+
+.search-input-wrapper input:focus { border-color: var(--primary-color); box-shadow: 0 0 0 3px rgba(74, 144, 226, 0.1); }
+
+/* Fila 3: Tabla */
+.table-container {
+    background: var(--white);
+    border-radius: 12px;
+    overflow: hidden;
+    border: 1px solid #e1e8ed;
+}
+
+.tasks-table {
+    width: 100%;
+    border-collapse: collapse;
+    text-align: left;
+}
+
+.tasks-table th {
+    background: #f8fafc;
+    padding: 15px;
+    font-size: 0.85rem;
+    color: #4a5568;
+    text-transform: uppercase;
+    border-bottom: 2px solid #edf2f7;
+}
+
+.tasks-table td {
+    padding: 15px;
+    border-bottom: 1px solid #edf2f7;
+    font-size: 0.95rem;
+    color: var(--text-dark);
+}
+
+/* Badges de Prioridad y Estado */
+.badge {
+    padding: 5px 10px;
+    border-radius: 6px;
+    font-size: 0.75rem;
+    font-weight: 700;
+    text-transform: uppercase;
+}
+
+.priority-high { background: #fff5f5; color: #c53030; }
+.priority-medium { background: #fffaf0; color: #9c4221; }
+.priority-low { background: #f0fff4; color: #276749; }
+
+.status-pending { color: #d69e2e; font-style: italic; }
+.status-completed { color: #38a169; font-weight: 600; }
+
+/* Botones de Acción */
+.actions-cell {
+    display: flex;
+    gap: 10px;
+}
+
+.btn-edit { color: var(--primary-color); background: #ebf4ff; border: none; padding: 6px; border-radius: 4px; cursor: pointer; }
+.btn-delete { color: #e53e3e; background: #fff5f5; border: none; padding: 6px; border-radius: 4px; cursor: pointer; }
+
+/* Overlay (Fondo oscuro) */
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    display: none; /* Oculto por defecto */
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    backdrop-filter: blur(3px);
+}
+
+/* Caja del Modal */
+.modal-content {
+    background: var(--white);
+    width: 90%;
+    max-width: 500px;
+    padding: 2rem;
+    border-radius: 16px;
+    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
+    animation: slideIn 0.3s ease-out;
+}
+
+
+
+.modal-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1.5rem;
+    border-bottom: 1px solid #f0f0f0;
+    padding-bottom: 1rem;
+}
+
+.btn-close {
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+    color: #a0aec0;
+}
+
+.modal-footer {
+    margin-top: 2rem;
+    display: flex;
+    justify-content: flex-end;
+    gap: 12px;
+}
+
+.btn-secondary {
+    background: #edf2f7;
+    color: #4a5568;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 8px;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+/* Clase para mostrar el modal desde JS */
+.modal-overlay.active {
+    display: flex !important;
+}
+
+@keyframes slideIn {
+    from { transform: translateY(-20px); opacity: 0; }
+    to { transform: translateY(0); opacity: 1; }
+}

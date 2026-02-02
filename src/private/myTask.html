@@ -1,0 +1,127 @@
+<div class="app-layout">
+    <aside class="sidebar">
+        <div class="sidebar-logo">
+            <h2>EstudiaPues</h2>
+        </div>
+        <nav class="sidebar-nav">
+            <button class="nav-item" data-path="/dashboardUser">
+                <i class="fas fa-th-large"></i> Dashboard
+            </button>
+            <button class="nav-item active" data-path="/mytask">
+                <i class="fas fa-tasks"></i> My Tasks
+            </button>
+            <button class="nav-item" data-path="/profile">
+                <i class="fas fa-user"></i> Profile
+            </button>
+        </nav>
+    </aside>
+
+    <main class="main-container">
+      <header class="app-header">
+            <div class="header-left">
+                <div class="header-box home-box" id="go-menu">
+                    <i class="fas fa-home"></i>
+                </div>
+                <div class="header-box page-info">
+                    <span id="current-page-title">Dashboard</span>
+                </div>
+            </div>
+
+            <div class="header-right">
+                <div class="user-info">
+                    <span id="user-name">Estudiante</span>
+                    <img src=https://us.123rf.com/450wm/barks/barks2101/barks210100083/162354591-ilustraci%C3%B3n-de-icono-de-avatar-de-trabajador-circular-cuerpo-superior-persona-de-negocios.jpg?ver alt="Profile" class="user-avatar" id="header-avatar">
+                </div>
+                <button id="btn-logout" class="logout-link">Logout</button>
+            </div>
+        </header>
+
+        <section class="content-body">
+            <div class="table-stats-row">
+                <div class="mini-stat">
+                    <span class="label">Total Tasks</span>
+                    <span class="value" id="table-total">0</span>
+                </div>
+                <div class="mini-stat">
+                    <span class="label">Priority High</span>
+                    <span class="value high" id="table-high-count">0</span>
+                </div>
+                <button type="button" id="btn-open-modal" class="btn-add-task">
+                    <i class="fas fa-plus"></i> New Task
+                </button>
+            </div>
+
+            <div class="search-bar-row">
+                <div class="search-input-wrapper">
+                    <i class="fas fa-search"></i>
+                    <input type="text" id="task-search" placeholder="Search task by name...">
+                </div>
+                <select id="filter-priority-select">
+                    <option value="all">All Priorities</option>
+                    <option value="high">High Priority</option>
+                    <option value="medium">Medium Priority</option>
+                    <option value="low">Low Priority</option>
+                </select>
+            </div>
+
+            <div class="table-container">
+                <table class="tasks-table">
+                    <thead>
+                        <tr>
+                            <th>Task Name</th>
+                            <th>Assignment</th>
+                            <th>Status</th>
+                            <th>Priority</th>
+                            <th>Due Date</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody id="tasks-table-body">
+                        </tbody>
+                </table>
+            </div>
+        </section>
+    </main>
+
+    <div id="task-modal" class="modal-overlay">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2 id="modal-title">Create New Task</h2>
+                <button type="button" id="close-modal" class="btn-close">&times;</button>
+            </div>
+            
+            <form id="task-form">
+                <div class="form-group">
+                    <label for="task-name">Task Name</label>
+                    <input type="text" id="task-name" placeholder="e.g., Math Homework" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="task-priority-modal">Priority</label>
+                    <select id="task-priority-modal">
+                        <option value="low">Low</option>
+                        <option value="medium">Medium</option>
+                        <option value="high">High</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="task-status-modal">Status</label>
+                    <select id="task-status-modal">
+                    <option value="pending">Pending</option>
+                    <option value="completed">Completed</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="task-date-modal">Due Date</label>
+                    <input type="date" id="task-date-modal" required>
+                </div>
+
+                <div class="modal-footer">
+                    <button type="button" id="btn-cancel" class="btn-secondary">Cancel</button>
+                    <button type="submit" class="btn-primary">Save Task</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

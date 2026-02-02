@@ -1,0 +1,41 @@
+{
+  "users": [
+    {
+      "id": "9e69",
+      "name": "Duvan",
+      "email": "duvanriwi@gmail.com",
+      "password": "1234567",
+      "role": "admin",
+      "isActive": true
+    },
+    {
+      "id": "8f7e",
+      "name": "juanito gomez",
+      "email": "juancho@gmail.com",
+      "password": "U1234567",
+      "role": "user",
+      "isActive": true,
+      "address": "saddf4r5353",
+      "degree": "11 A",
+      "group": "3- mañana"
+    }
+  ],
+  "task": [
+    {
+      "id": "0747",
+      "userId": "8f7e",
+      "title": "dsfsfs",
+      "priority": "high",
+      "dueDate": "2026-02-21",
+      "status": "completed"
+    },
+    {
+      "id": "885a",
+      "userId": "8f7e",
+      "title": "dsfsfs",
+      "priority": "high",
+      "dueDate": "2026-02-14",
+      "status": "pending"
+    }
+  ]
+}

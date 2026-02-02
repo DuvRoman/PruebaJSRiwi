@@ -1,0 +1,56 @@
+<div class="app-layout">
+    <aside class="sidebar">
+        <div class="sidebar-logo">
+            <h2>EstudiaPues</h2>
+        </div>
+        <nav class="sidebar-nav">
+            <button class="nav-item active" data-path="/dashboardUser">
+                <i class="fas fa-th-large"></i> Dashboard
+            </button>
+            <button class="nav-item" data-path="/mytask">
+                <i class="fas fa-tasks"></i> My Tasks
+            </button>
+            <button class="nav-item" data-path="/profile">
+                <i class="fas fa-user"></i> Profile
+            </button>
+        </nav>
+    </aside>
+
+    <main class="main-container">
+        <header class="app-header">
+            <div class="header-left">
+                <div class="header-box home-box" id="go-menu">
+                    <i class="fas fa-home"></i>
+                </div>
+                <div class="header-box page-info">
+                    <span id="current-page-title">Dashboard</span>
+                </div>
+            </div>
+
+            <div class="header-right">
+                <div class="user-info">
+                    <span id="user-name">Estudiante</span>
+                    <img src=https://us.123rf.com/450wm/barks/barks2101/barks210100083/162354591-ilustraci%C3%B3n-de-icono-de-avatar-de-trabajador-circular-cuerpo-superior-persona-de-negocios.jpg?ver alt="Profile" class="user-avatar" id="header-avatar">
+                </div>
+                <button id="btn-logout" class="logout-link">Logout</button>
+            </div>
+        </header>
+
+        <section class="content-body" id="main-content">
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <h3>Total Tasks</h3>
+                    <p id="stat-total">0</p>
+                </div>
+                <div class="stat-card pending">
+                    <h3>Pending</h3>
+                    <p id="stat-pending">0</p>
+                </div>
+                <div class="stat-card completed">
+                    <h3>Completed</h3>
+                    <p id="stat-completed">0</p>
+                </div>
+            </div>
+            </section>
+    </main>
+</div>
